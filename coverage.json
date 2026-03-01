@@ -1,0 +1,56 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-03-01T13:46:06.004Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 3,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-10",
+        "summary": "Update the Job Role Prediction frontend section to display the explanation for each of the top 3 predicted roles. For each role, show the list of detected skills and the matching factors beneath or alongside the existing confidence bar/chart visualization.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/lib/resumeAnalysis.ts",
+          "frontend/src/components/JobRolePrediction.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/lib/resumeAnalysis.ts",
+          "frontend/src/components/JobRolePrediction.tsx"
+        ]
+      },
+      {
+        "id": "REQ-8",
+        "summary": "Enhance the backend ATS score computation to include NLP preprocessing steps — stopword removal and lemmatization — on the resume text before performing TF-IDF cosine similarity comparison against the job description for the selected role. The preprocessed text should be used for all downstream scoring.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-9",
+        "summary": "Enhance the Job Role Prediction backend logic to return, alongside the top 3 predicted roles and confidence percentages, an explanation for each prediction. The explanation must list the skills detected in the resume and the matching factors (keywords/skills) that contributed to that role's confidence score.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/main.mo",
+    "build-request.json",
+    "build-template/README.md",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/components/JobRolePrediction.tsx",
+    "frontend/src/lib/resumeAnalysis.ts",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

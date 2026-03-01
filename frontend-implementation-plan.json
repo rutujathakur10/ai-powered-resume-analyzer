@@ -1,0 +1,28 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Resume Analyzer: NLP Preprocessing, Semantic Similarity, and Prediction Explanations",
+  "requirements": [
+    {
+      "id": "REQ-10",
+      "summary": "Display prediction explanations for top 3 predicted job roles including detected skills and matching factors",
+      "acceptanceCriteria": [
+        "Each of the top 3 predicted job role cards/rows displays the detected skills list",
+        "Each card/row also shows the matching factors that contributed to the prediction",
+        "The explanation is presented clearly without cluttering the confidence visualization"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/lib/resumeAnalysis.ts",
+          "operation": "modify",
+          "description": "Enhance the predictJobRoles function to return explanation data for each prediction. For each of the top 3 predicted roles, include a detectedSkills array containing skills found in the resume text and a matchingFactors array listing the keywords/skills that contributed to the confidence score. Apply NLP preprocessing (stopword removal and lemmatization using existing text processing patterns) to the resume text before skill extraction to ensure consistent skill detection. Update the return type to include these new explanation fields alongside the existing title and confidence properties."
+        },
+        {
+          "path": "frontend/src/components/JobRolePrediction.tsx",
+          "operation": "modify",
+          "description": "Update the component to display prediction explanations beneath each of the top 3 predicted role cards. For each role, render the detected skills as a list of badge/chip elements and display the matching factors that drove the confidence score. Position the explanation content below the existing confidence progress bar to maintain visual hierarchy without cluttering the chart visualization. Use Tailwind CSS utility classes for styling and ensure responsive layout on mobile devices."
+        }
+      ]
+    }
+  ]
+}

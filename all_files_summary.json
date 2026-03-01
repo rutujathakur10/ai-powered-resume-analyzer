@@ -1,0 +1,22 @@
+{
+  "backend/main.mo": "Motoko actor defining job role, skill gap, and resume data types with query/update methods for fetching job roles, certifications, resume templates, and action verb suggestions.",
+  "feature_evidence.json": "Feature evidence report linking the job role prediction explanation UI feature to its implementation files and test requirements.",
+  "frontend-file-summaries.txt": "JSON map of frontend source file paths to short descriptions summarizing each component's purpose and key functionality.",
+  "frontend/index.css": "Tailwind base stylesheet defining OKLCH CSS custom properties for light and dark theme color tokens including background, foreground, chart, and sidebar variables.",
+  "frontend/index.html": "Minimal HTML entry point that mounts the React app into a root div and loads the main TypeScript module.",
+  "frontend/src/App.tsx": "Root React component with sticky header navigation, mobile menu, and a dashboard layout composing all six analysis sections while managing shared resume text, selected role, and missing skills state.",
+  "frontend/src/components/ATSScoreSection.tsx": "ATS score section component with a job role selector, cosine-similarity scoring via resumeAnalysis, and a custom SVG half-circle gauge built with Recharts PieChart.",
+  "frontend/src/components/CareerRecommendations.tsx": "Career recommendations component that displays personalized projects, certifications, and tools based on missing skills, organized in color-coded cards fetched from the backend.",
+  "frontend/src/components/JobRolePrediction.tsx": "React component that displays the top 3 predicted job roles for an uploaded resume using a ranked list with confidence scores and a bar chart, fetching job role data via `useGetJobRoles` and computing predictions with `predictJobRoles`.",
+  "frontend/src/components/ResumeImprovements.tsx": "React component that analyzes an uploaded resume for weak action verbs and formatting issues, displaying suggestions with alternatives using `analyzeResumeImprovements`.",
+  "frontend/src/components/ResumeUpload.tsx": "React component providing a drag-and-drop or file-input interface for uploading PDF or DOCX resumes, extracting their text and passing it to a parent callback.",
+  "frontend/src/components/SkillGapAnalysis.tsx": "React component that compares resume skills against a selected job role's requirements, displaying matched vs. missing skills with summary stats and a bar chart via `analyzeSkillGap`.",
+  "frontend/src/hooks/useActor.ts": "Custom hook that creates and caches an ICP backend actor (authenticated or anonymous) using React Query, and invalidates dependent queries whenever the actor changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides an `InternetIdentityProvider` context and `useInternetIdentity` hook for managing ICP Internet Identity authentication, including login, logout, and persisted identity state via `AuthClient`.",
+  "frontend/src/hooks/useQueries.ts": "Defines React Query hooks (`useGetJobRoles`, `useGetCertifications`, `useGetActionVerbSuggestions`) that fetch static data from the ICP backend actor.",
+  "frontend/src/index.css": "Global CSS file that imports Inter and Space Grotesk fonts, sets up Tailwind directives, and defines OKLCH-based CSS custom properties for light/dark themes including colors, sidebar, charts, and utility classes.",
+  "frontend/src/lib/resumeAnalysis.ts": "Client-side TypeScript module implementing TF-IDF cosine similarity, skill extraction, job role prediction, and improvement suggestions with rule-based NLP including stopword removal and lemmatization; also handles PDF/DOCX text extraction via CDN-loaded libraries.",
+  "frontend/src/main.tsx": "React application entry point that mounts the app with QueryClientProvider (React Query) and InternetIdentityProvider wrappers around the root App component.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration extending the default theme with custom OKLCH-based color tokens, Inter/Space Grotesk fonts, border radius variants, box shadows, and animation keyframes; includes typography, container-queries, and animate plugins.",
+  "project_state.json": "Project state manifest (version 5) describing the full-stack AI Resume Analyzer's architecture, existing features, tech stack (FastAPI, spaCy, Sentence Transformers, scikit-learn, Streamlit), and known issues for build planning continuity."
+}

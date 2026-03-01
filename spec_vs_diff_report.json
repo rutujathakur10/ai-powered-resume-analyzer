@@ -1,0 +1,33 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-03-01T13:46:06.002Z",
+  "summary": "The diff implements REQ-9 and REQ-10 fully in the frontend (resumeAnalysis.ts and JobRolePrediction.tsx), and implements NLP preprocessing (stopword removal + lemmatization) in the frontend library. However, REQ-8 requires backend NLP preprocessing in backend/main.mo, but the modified main.mo shows no stopword removal or lemmatization logic — it appears to have been simplified/stripped rather than enhanced. The ATS scoring and preprocessing are handled client-side only.",
+  "missing_requirements": [
+    {
+      "id": "REQ-8",
+      "requirement": "Enhance the backend ATS score computation to include NLP preprocessing steps (stopword removal and lemmatization) on the resume text before performing TF-IDF cosine similarity comparison against the job description for the selected role.",
+      "reason": "The modified backend/main.mo shows no ATS score computation function, no stopword removal, and no lemmatization logic. The file appears stripped down to only getJobRoles, getCertifications, getResumeTemplates, getResumeTemplate, getActionVerbSuggestions, and addResumeTemplate — no computeAtsScore or any NLP preprocessing functions are present. While NLP preprocessing was added client-side in resumeAnalysis.ts, the requirement explicitly targets the backend ATS score computation.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "The backend/main.mo was simplified or stripped of existing backend logic such as ATS score computation, reducing backend functionality rather than enhancing it.",
+      "reason": "The diff shows main.mo with only basic query functions and no ATS scoring or prediction logic, suggesting previously existing backend features may have been removed, which was not requested.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "confidence": 0.82,
+  "changed_files": [
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/src/components/JobRolePrediction.tsx",
+    "frontend/src/lib/resumeAnalysis.ts",
+    "project_state.json"
+  ]
+}

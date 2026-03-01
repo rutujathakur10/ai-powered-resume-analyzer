@@ -1,0 +1,24 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-job-role-prediction-frontend-section-to-display-the-explanation-for-each-of-the-top-3-predicted-roles-for-each-role-show-the-list-of-detected-skills-and-the-matching-factors-beneath-or-alongside-the-existing-confidence-bar-chart-visualization",
+      "featureTitle": "Update the Job Role Prediction frontend section to display the explanation for each of the top 3 predicted roles. For each role, show the list of detected skills and the matching factors beneath or alongside the existing confidence bar/chart visualization.",
+      "files": [
+        "frontend/src/components/JobRolePrediction.tsx",
+        "frontend/src/lib/resumeAnalysis.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

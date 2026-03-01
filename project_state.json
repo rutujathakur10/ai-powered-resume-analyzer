@@ -1,0 +1,161 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Full-stack AI-powered Resume Analyzer module (part of a larger AI career system) with Python/FastAPI backend, NLP processing (spaCy, Sentence Transformers/TF-IDF), ML-based job role prediction, and Streamlit frontend. Features: resume upload (PDF/DOCX), ATS score generation with skill match percentage, skill gap analysis with missing skills list, career recommendations (projects, certifications, tools), job role prediction (top 3 with confidence percentages and explanation), and modular/scalable code structure with SQLite database.",
+  "architectural_notes": [
+    "NLP stack: spaCy (NER), Sentence Transformers (semantic similarity), TF-IDF + Cosine Similarity fallback",
+    "ML stack: scikit-learn for job role classifier (Logistic Regression / Naive Bayes / BERT)",
+    "Resume Analyzer is a module within a larger AI career system — design for modularity and integration",
+    "Frontend: Streamlit dashboard (primary); Backend: Python with modular code structure"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-implement-a-resume-upload-interface-that-accepts-pdf-and-docx-files-extract-and-display-the-raw-text-content-from-the-uploaded-file-on-the-frontend",
+      "title": "Implement a resume upload interface that accepts PDF and DOCX files. Extract and display the raw text content from the uploaded file on the frontend.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-an-ats-score-generator-on-the-backend-accept-the-extracted-resume-text-and-a-selected-job-role-compare-the-resume-against-predefined-job-descriptions-using-tf-idf-and-cosine-similarity-return-a-numeric-ats-score-from-0-to-100",
+      "title": "Implement an ATS Score Generator on the backend. Accept the extracted resume text and a selected job role. Compare the resume against predefined job descriptions using TF-IDF and cosine similarity. Return a numeric ATS score from 0 to 100.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-skill-gap-analysis-on-the-backend-extract-skills-from-the-resume-text-using-keyword-matching-against-a-predefined-skills-dictionary-for-the-selected-job-role-return-matched-skills-missing-skills-and-skill-gap-percentage",
+      "title": "Implement Skill Gap Analysis on the backend. Extract skills from the resume text using keyword matching against a predefined skills dictionary for the selected job role. Return matched skills, missing skills, and skill gap percentage.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-career-recommendation-engine-on-the-backend-based-on-the-missing-skills-for-the-selected-job-role-return-a-curated-list-of-suggested-projects-to-build-certifications-to-complete-and-tools-to-learn",
+      "title": "Implement a Career Recommendation Engine on the backend. Based on the missing skills for the selected job role, return a curated list of suggested projects to build, certifications to complete, and tools to learn.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-job-role-prediction-feature-on-the-backend-without-requiring-the-user-to-select-a-job-role-analyze-the-resume-text-and-return-the-top-3-most-suitable-job-roles-with-confidence-percentages-using-a-pre-built-or-rule-based-scoring-model",
+      "title": "Implement a Job Role Prediction feature on the backend. Without requiring the user to select a job role, analyze the resume text and return the top 3 most suitable job roles with confidence percentages using a pre-built or rule-based scoring model.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-resume-improvement-suggestions-on-the-backend-analyze-the-resume-text-to-detect-weak-or-passive-action-verbs-and-return-suggestions-for-stronger-alternatives-along-with-generic-formatting-improvement-tips",
+      "title": "Implement Resume Improvement Suggestions on the backend. Analyze the resume text to detect weak or passive action verbs, and return suggestions for stronger alternatives along with generic formatting improvement tips.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-clean-organized-dashboard-ui-with-distinct-sections-for-resume-upload-ats-score-with-gauge-meter-skill-gap-analysis-bar-chart-job-role-prediction-bar-chart-career-recommendations-and-resume-improvement-suggestions-apply-a-polished-professional-visual-theme-with-a-dark-or-neutral-color-palette-modern-typography-and-card-based-layout",
+      "title": "Build a clean, organized dashboard UI with distinct sections for: Resume Upload, ATS Score (with gauge/meter), Skill Gap Analysis (bar chart), Job Role Prediction (bar chart), Career Recommendations, and Resume Improvement Suggestions. Apply a polished, professional visual theme with a dark or neutral color palette, modern typography, and card-based layout.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-job-role-prediction-frontend-section-to-display-the-explanation-for-each-of-the-top-3-predicted-roles-for-each-role-show-the-list-of-detected-skills-and-the-matching-factors-beneath-or-alongside-the-existing-confidence-bar-chart-visualization",
+      "title": "Update the Job Role Prediction frontend section to display the explanation for each of the top 3 predicted roles. For each role, show the list of detected skills and the matching factors beneath or alongside the existing confidence bar/chart visualization.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Resume Upload: Accept PDF/DOCX, extract and preprocess text using NLP",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "ATS Score Generator: Compare resume to job role descriptions using semantic similarity, output score out of 100",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Skill Gap Analysis: Extract skills via NER, compare with job role requirements, show matched/missing skills and gap percentage",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Career Recommendation Engine: Suggest projects, certifications, and tools based on missing skills",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Job Role Prediction: Predict top 3 suitable job roles with confidence percentages using a classification model",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Resume Improvement Suggestions: Detect weak action verbs, suggest better bullet points and formatting improvements",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "UI Dashboard: ATS score meter, skill gap bar chart, job suitability prediction chart using Streamlit or React",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "ATS Feature: NLP preprocessing with stopword removal and lemmatization before similarity comparison",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Job Role Prediction: Provide explanation for prediction including detected skills and matching factors",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Modular folder structure with clean, scalable code for the Resume Analyzer module",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Enhance the backend ATS score computation to include NLP preprocessing steps — stopword removal and lemmatization — on the resume text before performing TF-IDF cosine similarity comparison against the job description for the selected role. The preprocessed text should be used for all downstream scoring.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Enhance the Job Role Prediction backend logic to return, alongside the top 3 predicted roles and confidence percentages, an explanation for each prediction. The explanation must list the skills detected in the resume and the matching factors (keywords/skills) that contributed to that role's confidence score.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "AI-Powered Resume Analyzer",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,84 @@
+{
+  "kind": "build_request",
+  "title": "Resume Analyzer: NLP Preprocessing, Semantic Similarity, and Prediction Explanations",
+  "projectName": "Resume Analyzer",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-8",
+      "text": "Enhance the backend ATS score computation to include NLP preprocessing steps — stopword removal and lemmatization — on the resume text before performing TF-IDF cosine similarity comparison against the job description for the selected role. The preprocessed text should be used for all downstream scoring.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Preprocess using NLP (remove stopwords, lemmatization)",
+          "ATS Feature: NLP preprocessing with stopword removal and lemmatization before similarity comparison"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Resume text undergoes stopword removal and lemmatization before ATS similarity scoring",
+        "The ATS score returned still falls in the 0–100 range",
+        "Preprocessing is applied consistently to both resume text and job description text prior to comparison"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Enhance the Job Role Prediction backend logic to return, alongside the top 3 predicted roles and confidence percentages, an explanation for each prediction. The explanation must list the skills detected in the resume and the matching factors (keywords/skills) that contributed to that role's confidence score.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Provide explanation for prediction (skills detected + matching factors)",
+          "Job Role Prediction: Provide explanation for prediction including detected skills and matching factors"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Each of the top 3 predicted roles includes a list of detected skills from the resume",
+        "Each prediction includes a list of matching factors (skills/keywords) that drove the confidence score",
+        "The explanation data is returned as part of the existing prediction response structure"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Update the Job Role Prediction frontend section to display the explanation for each of the top 3 predicted roles. For each role, show the list of detected skills and the matching factors beneath or alongside the existing confidence bar/chart visualization.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Provide explanation for prediction (skills detected + matching factors)",
+          "Display confidence percentages"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Each of the top 3 predicted job role cards/rows displays the detected skills list",
+        "Each card/row also shows the matching factors that contributed to the prediction",
+        "The explanation is presented clearly without cluttering the confidence visualization"
+      ]
+    }
+  ],
+  "constraints": [
+    "All backend logic must remain in a single Motoko actor in backend/main.mo — do not introduce Python, spaCy, or Sentence Transformers as they are not supported on this platform",
+    "NLP preprocessing (stopword removal, lemmatization) must be implemented in Motoko or client-side TypeScript using available patterns in frontend/src/lib/resumeAnalysis.ts",
+    "Do not modify immutable frontend paths: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui",
+    "Frontend must use React, TypeScript, Tailwind CSS, and React Query — no Streamlit or Python frontend"
+  ],
+  "nonGoals": [
+    "Introducing Python, FastAPI, spaCy, Sentence Transformers, or any external ML library backend",
+    "Adding a Streamlit frontend or any non-React UI framework",
+    "Implementing Logistic Regression or Naive Bayes ML models (not supported on this platform)",
+    "Adding SQLite or any external database",
+    "Creating a new modular folder structure — the existing project structure is retained",
+    "User authentication or session persistence",
+    "Re-implementing features already live: resume upload, ATS scoring, skill gap analysis, career recommendations, resume improvement suggestions, dashboard UI"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}
